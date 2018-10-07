@@ -1,0 +1,40 @@
+# build usage: $ docker build -f Dockerfile.DesignLab -t test:latest .
+# run usage: $ docker run -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $(pwd):/workspace test:latest bash -c "/opt/Xilinx/14.7/ISE_DS/common/bin/lin64/xlcm; DesignLab-1.0.8/DesignLab;"
+
+FROM gassettj/papilio_environment
+#FROM drtrigon/papilio_environment
+MAINTAINER DrTrigon <dr.trigon@surfeu.ch>
+
+# LABEL author.user1="DrTrigon <dr.trigon@surfeu.ch>"
+
+# Initial update
+RUN apt-get -y update
+
+# Install License Configuration Manager dependencies
+RUN apt-get install -y \
+  libqt4-network
+
+# Create symbolic link for dependency
+RUN ln -s /usr/lib/x86_64-linux-gnu/libQtNetwork.so.4.8.7 /usr/lib/x86_64-linux-gnu/libQt_Network.so
+
+# Install DesignLab dependencies
+RUN apt-get install -y \
+  gawk \
+  libc-dev-bin \
+  libc6-dev \
+  libftdi-dev \
+  libftdi1 \
+  libmpfr4 \
+  libsigsegv2 \
+  libusb-dev \
+  linux-libc-dev \
+  manpages \
+  manpages-dev \
+  libc6 \
+  default-jre
+
+# Install DesignLab
+RUN wget "http://forum.gadgetfactory.net/files/file/236-papilio-designlab-ide/?do=download&r=977&confirm=1&t=1&csrfKey=a60adee3c800e8a09f734d144dd7b4ca" -O DesignLab-1.0.8-linux64.tgz && \
+  tar zxvf DesignLab-1.0.8-linux64.tgz && \
+  rm DesignLab-1.0.8-linux64.tgz && \
+  DesignLab-1.0.8/ubuntu-setup.sh
