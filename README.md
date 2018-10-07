@@ -63,6 +63,7 @@ You can also run a bash shell in the docker container for testing and debugging 
 in order to stop the docker containers (especially with the original entrypoint as Jack set it) use ps to get the container id and then stop it:
 
 `$ docker ps`
+
 `$ docker stop <container>`
 
 In order to get more info on how the docker image was created, run:
