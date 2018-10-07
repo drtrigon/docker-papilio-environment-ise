@@ -72,9 +72,9 @@ In order to get more info on how the docker image was created, run:
 
 ### Reference
 
-[1] https://github.com/drtrigon/docker-papilio-environment-ise
-[2] https://hub.docker.com/r/drtrigon/papilio-environment-ise/
-[3] https://docs.docker.com/engine/reference/run/#foreground (-it param)
-[4] https://forums.docker.com/t/docker-run-cannot-be-killed-with-ctrl-c/13108 (docker stop)
-[5] https://medium.com/@oprearocks/how-to-properly-override-the-entrypoint-using-docker-run-2e081e5feb9d (entrypoint)
-[6] https://github.com/jessfraz/dockerfiles/issues/6 (xhost)
+1. https://github.com/drtrigon/docker-papilio-environment-ise
+2. https://hub.docker.com/r/drtrigon/papilio-environment-ise/
+3. https://docs.docker.com/engine/reference/run/#foreground (-it param)
+4. https://forums.docker.com/t/docker-run-cannot-be-killed-with-ctrl-c/13108 (docker stop)
+5. https://medium.com/@oprearocks/how-to-properly-override-the-entrypoint-using-docker-run-2e081e5feb9d (entrypoint)
+6. https://github.com/jessfraz/dockerfiles/issues/6 (xhost)
