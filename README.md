@@ -28,7 +28,7 @@ Finally run ISE:
 
 `$ docker run -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $(pwd):/workspace drtrigon/papilio-environment-ise bash -c "/opt/Xilinx/14.7/ISE_DS/common/bin/lin64/xlcm; ise;"`
 
-This will first start the License Configuration Manager allowing you to add your Xilinx.lic license file. After you close that dialog it finally starts ISE in a window.
+This will first start the License Configuration Manager allowing you to add your Xilinx.lic license file (load it from /workspace directory). After you close that dialog it finally starts ISE in a window.
 
 ## Further info
 
